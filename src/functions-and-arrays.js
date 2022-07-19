@@ -1,41 +1,109 @@
 // Iteration #1: Find the maximum
-function maxOfTwoNumbers() {}
+function maxOfTwoNumbers(a, b) {
+  if (a >= b){
+    return a
+  }
+  else if (a < b){
+    return b
+  }
+}
 
 
 
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-function findLongestWord() {}
+function findLongestWord(array) {
+  if (array == '') {
+    return null;
+  }
+  let word = '';
+  for (let i = 0; i < array.length; i++) {
+    if (word.length < array[i].length) {
+      word = array[i];
+    }
+  }
+  return word;
+}
 
+// i've cracked it with the help of Ali but there's a part I still don't understand, why would it pick up the longest word and not any other word exactly ?
 
 
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-function sumNumbers() {}
+function sumNumbers(array) {
+  if (!array.length) return 0;
+
+  let sum = 0;
+
+  for (i = 0; i < array.length; i++){
+      sum += array[i];
+  }
+  return sum;
+}
+
+// that one was actually quite easy
 
 
 
 // Iteration #3.1 Bonus:
-function sum() {}
+function sum(array) {
+  if (!array.length) return 0;
 
+  let sum = 0;
+
+  for (i = 0; i < array.length; i++){
+
+      sum += array[i];
+   }
+  
+  return sum;
+}
+  
 
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers() {}
+function averageNumbers(array1) {
+  if (!array1.length) return null;
+
+  let sum = 0;
+
+  for (i = 0; i < array1.length; i++){
+    sum += array1[i];
+}
+
+  let average = sum/array1.length;
+
+  return average;
+}
 
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength() { }
+function averageWordLength(array) {
+
+  let sum = 0;
+  let avg = 0;
+
+  if (!array.length) return null;
+
+
+  for (i = 0; i <= array.length - 1; i++) {
+    sum = sum + array[i].length;
+    avg = sum / array.length;
+  }
+  return avg;
+}
+
+
 
 // Bonus - Iteration #4.1
-function avg() {}
+function avg(arr) {}
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
@@ -52,14 +120,27 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
-
+function uniquifyArray(words) {
+if (words.length == '')
+return null;
+    const unique = [];
+  for (const word of words) {
+    if (!unique.includes(word)) {
+      unique.push(word);
+    }
+  } 
+  return unique;
+}
+  
 
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() {}
+function doesWordExist (wordsArr, search ) {
+  if (!wordsArr.length) return null;
+  return wordsArr.includes(search)}
+
 
 
 
@@ -78,7 +159,19 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
+/* Declare a function named howManyTimes that will take in an array of words as the first argument, and a word to search for as the second argument. 
+The function will return the number of times that word appears in the array.
+
+
+*/
+function howManyTimes(array, search) {
+  if (!array.length || !array.includes(search)) return 0;
+  let count = 0
+  array.forEach((elem) => (elem === search && count ++));
+    return count
+  }
+console.log(howManyTimes(wordsUnique, 'poison'))
+
 
 
 
