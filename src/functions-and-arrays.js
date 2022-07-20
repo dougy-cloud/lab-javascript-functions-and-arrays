@@ -14,8 +14,8 @@ function maxOfTwoNumbers(a, b) {
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
 function findLongestWord(array) {
-  if (array == '') {
-    return null;
+  if (!array.length) {
+      return null;
   }
   let word = '';
   for (let i = 0; i < array.length; i++) {
@@ -170,7 +170,6 @@ function howManyTimes(array, search) {
   array.forEach((elem) => (elem === search && count ++));
     return count
   }
-console.log(howManyTimes(wordsUnique, 'poison'))
 
 
 
